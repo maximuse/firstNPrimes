@@ -24,8 +24,9 @@ int main() {
     int n;
     int pieces = 0;
     int i = 2;
+    FILE * file = fopen("primes.txt", "w");
 
-    printf("First n prime numbers: ");
+    printf("First n pcs prime numbers: ");
     scanf("%d", &n);
 
     printf("\n");
@@ -33,6 +34,7 @@ int main() {
     while(pieces < n) {
         if(isPrime(i)) {
             pieces++;
+            fprintf(file, "%d\n", i);
             printf("%d\n", i);
         }
 
@@ -40,6 +42,8 @@ int main() {
     }
 
     printf("\n");
+
+    fclose(file);
 
     system("PAUSE");
     return 0;
